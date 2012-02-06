@@ -2,11 +2,11 @@ W.Examples = function() {
   // Define table rows.
   var positioning = Titanium.UI.createTableViewRow({title:'Positioning', header:'Layout & Positioning', hasChild:true});  
   var layoutModes = Titanium.UI.createTableViewRow({title:'Layout Modes', hasChild:true});
-  var rowThree = {title:'Row 2', header:'Group 2'};
+  var eventHandling = Titanium.UI.createTableViewRow({title:'Event Handling', hasChild:true});
   var tableData = new Array();
   tableData.push(positioning);
   tableData.push(layoutModes);
-  tableData.push(rowThree);
+  tableData.push(eventHandling);
   
   // Add table rows to table.
   var table = Titanium.UI.createTableView({
@@ -44,7 +44,10 @@ W.Examples = function() {
   });
   layoutModes.addEventListener('click', function(e){
     navGroup.open(W.LayoutModes());
-  });  
+  });
+  eventHandling.addEventListener('click', function(e){
+    navGroup.open(W.EventHandling());
+  });   
   
   return winRoot;
 }
