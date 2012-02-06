@@ -1,11 +1,11 @@
 W.Examples = function() {
   // Define table rows.
-  var rowOne = Titanium.UI.createTableViewRow({title:'Positioning', header:'Layout'});  
-  var rowTwo = {title:'Row 2', hasChild:true};
+  var positioning = Titanium.UI.createTableViewRow({title:'Positioning', header:'Layout & Positioning', hasChild:true});  
+  var layoutModes = Titanium.UI.createTableViewRow({title:'Layout Modes', hasChild:true});
   var rowThree = {title:'Row 2', header:'Group 2'};
   var tableData = new Array();
-  tableData.push(rowOne);
-  tableData.push(rowTwo);
+  tableData.push(positioning);
+  tableData.push(layoutModes);
   tableData.push(rowThree);
   
   // Add table rows to table.
@@ -20,7 +20,7 @@ W.Examples = function() {
     //Ti.API.info('Index:' + e.index);
     //Ti.API.info('Row:' + JSON.stringify(e.row));
     //Ti.API.info('Source:' + JSON.stringify(e.source));
-    //Ti.API.info('Section:' + JSON.stringify(e.section));
+    Ti.API.info('Section:' + JSON.stringify(e.section));
   });
 
   // Create a window for the navigation group.
@@ -39,9 +39,12 @@ W.Examples = function() {
   winRoot.add(navGroup);
   
   // Add event listeners.
-  rowOne.addEventListener('click', function(e){
+  positioning.addEventListener('click', function(e){
     navGroup.open(W.Positioning());
   });
+  layoutModes.addEventListener('click', function(e){
+    navGroup.open(W.LayoutModes());
+  });  
   
   return winRoot;
 }
