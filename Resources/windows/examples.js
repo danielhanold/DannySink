@@ -1,9 +1,4 @@
 W.Examples = function() {
-  var win = UI.Win({
-      title:'Examples Navigation Group',
-      backgroundColor:'#CCCCCC'
-  });
-  
   // Define table rows.
   var rowOne = Titanium.UI.createTableViewRow({title:'Row 1', header:'Group 1'});  
   var rowTwo = {title:'Row 2', hasChild:true};
@@ -27,14 +22,30 @@ W.Examples = function() {
     Ti.API.info('Source:' + JSON.stringify(e.source));
     Ti.API.info('Section:' + JSON.stringify(e.section));
   });
-  
+
+  // Create a window for the navigation group.
+  var winNavGroup = UI.Win({
+    backgroundColor:'#CCCCCC',
+    title:'Example Window Title'
+  });
+  // Add the table with the navigation group to the window.
+  winNavGroup.add(table);
+  // Create a navigation group and add the window to it.
+  var navGroup = Ti.UI.iPhone.createNavigationGroup({
+    window: winNavGroup
+  });
   // Add the table to the window.
-  win.add(table);
+  var winRoot = Ti.UI.createWindow({navBarHidden:true});
+  winRoot.add(navGroup);
   
   // Add event listeners.
   rowOne.addEventListener('click', function(e){
-    Ti.API.info(JSON.stringify(e));
+    Ti.API.info('Clicked on row 1');
+    winNew = UI.Win({
+      title:'Testing'
+    });
+    navGroup.open(winNew,{animated:true});
   });
   
-  return win;
+  return winRoot;
 }
