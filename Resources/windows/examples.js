@@ -1,6 +1,6 @@
 W.Examples = function() {
   // Define table rows.
-  var rowOne = Titanium.UI.createTableViewRow({title:'Row 1', header:'Group 1'});  
+  var rowOne = Titanium.UI.createTableViewRow({title:'Positioning', header:'Layout'});  
   var rowTwo = {title:'Row 2', hasChild:true};
   var rowThree = {title:'Row 2', header:'Group 2'};
   var tableData = new Array();
@@ -16,17 +16,17 @@ W.Examples = function() {
   
   // Define general event listener.
   table.addEventListener('click', function(e){
-    Ti.API.info(JSON.stringify(e.rowData));
-    Ti.API.info('Index:' + e.index);
-    Ti.API.info('Row:' + JSON.stringify(e.row));
-    Ti.API.info('Source:' + JSON.stringify(e.source));
-    Ti.API.info('Section:' + JSON.stringify(e.section));
+    //Ti.API.info(JSON.stringify(e.rowData));
+    //Ti.API.info('Index:' + e.index);
+    //Ti.API.info('Row:' + JSON.stringify(e.row));
+    //Ti.API.info('Source:' + JSON.stringify(e.source));
+    //Ti.API.info('Section:' + JSON.stringify(e.section));
   });
 
   // Create a window for the navigation group.
   var winNavGroup = UI.Win({
     backgroundColor:'#CCCCCC',
-    title:'Example Window Title'
+    title:'Examples'
   });
   // Add the table with the navigation group to the window.
   winNavGroup.add(table);
@@ -40,11 +40,7 @@ W.Examples = function() {
   
   // Add event listeners.
   rowOne.addEventListener('click', function(e){
-    Ti.API.info('Clicked on row 1');
-    winNew = UI.Win({
-      title:'Testing'
-    });
-    navGroup.open(winNew,{animated:true});
+    navGroup.open(W.Positioning());
   });
   
   return winRoot;
