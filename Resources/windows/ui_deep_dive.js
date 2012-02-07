@@ -21,6 +21,11 @@ W.UiDeepDive = function () {
     title:'Scroll View',
     hasChild:true,
     win:'W.ScrollView'
+  }));
+  tableData.push(Ti.UI.createTableViewRow({
+    title:'Scrollable View',
+    hasChild:true,
+    win:'W.ScrollableView'
   }));  
 
   // Create a table for the nav group window.
