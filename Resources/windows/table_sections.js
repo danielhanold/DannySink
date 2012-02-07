@@ -14,8 +14,10 @@ W.TableSections = function () {
   var section2 = Ti.UI.createTableViewSection({headerTitle:'Header 2'});
   // Add some rows to this table.
   for (var i = 4; i < 20; i++) {
+    var backgroundColor = (i % 2 == 0) ? '#FFFFFF' : '#EEEEEE';
     section2.add(Ti.UI.createTableViewRow({
-      title:'Row ' + i
+      title:'Row ' + i,
+      backgroundColor:backgroundColor
     }));
   }
   
