@@ -47,7 +47,7 @@ W.Examples = function() {
   });
   eventHandling.addEventListener('click', function(e){
     navGroup.open(W.EventHandling());
-  });   
+  });
   
   return winRoot;
 }

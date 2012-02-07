@@ -2,17 +2,18 @@ W.UiDeepDive = function () {
   // Fill a table with data.
   var tableData = [];
   tableData.push(Ti.UI.createTableViewRow({
-    header:'',
-    title:'Table Views',
+    header:'Table Things',
+    title:'Object Literals as rows',
     hasChild:true,
-    win:'W.TableViews'
+    win:'W.TableObjectLiteral'
   }));
 
   // Create a table for the nav group window.
   // Add table rows to table.
   var table = Titanium.UI.createTableView({
       data:tableData,
-      style:Ti.UI.iPhone.TableViewStyle.GROUPED
+      style:Ti.UI.iPhone.TableViewStyle.GROUPED,
+      scrollable:false
   });
 
   // Create the window for the navigation group.
@@ -25,9 +26,10 @@ W.UiDeepDive = function () {
   var navGroup = Ti.UI.iPhone.createNavigationGroup({
     window: winNavGroup
   });
-  
   // Create the root window for this section.
   var win = Ti.UI.createWindow({navBarHidden:true});
+  win.navGroup = navGroup;
+  win.test = 'testing this';
   
   // Add the navGroup to the root window.
   win.add(navGroup);
