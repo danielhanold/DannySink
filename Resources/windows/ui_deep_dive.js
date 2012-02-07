@@ -7,6 +7,11 @@ W.UiDeepDive = function () {
     hasChild:true,
     win:'W.TableObjectLiteral'
   }));
+  tableData.push(Ti.UI.createTableViewRow({
+    title:'Table Sections',
+    hasChild:true,
+    win:'W.TableSections'
+  }));  
 
   // Create a table for the nav group window.
   // Add table rows to table.

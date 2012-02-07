@@ -7,6 +7,7 @@ function refreshWindows(){
   Ti.include('windows/positioning.js');
   Ti.include('windows/table_views.js');
   Ti.include('windows/table_object_literals.js');
+  Ti.include('windows/table_sections.js');
   Ti.include('windows/layout_modes.js');
   Ti.include('windows/event_handling.js');
   Ti.include('windows/tabgroup.js');
