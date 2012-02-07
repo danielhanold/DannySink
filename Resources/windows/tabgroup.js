@@ -10,10 +10,8 @@ W.TabGroup = function(){
   });
   
   Tab[1] = Ti.UI.createTab({
-    title:'Tab #2',
-    window:UI.Win({
-      title:'Second Window'
-    })
+    title:'UI Deep Dive',
+    window:W.UiDeepDive()
   });
   
   Tab[2] = Ti.UI.createTab({
