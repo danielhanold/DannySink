@@ -1,6 +1,8 @@
 W.UiDeepDive = function () {
   // Fill a table with data.
   var tableData = [];
+  
+  // Table Things.
   tableData.push(Ti.UI.createTableViewRow({
     header:'Table Things',
     title:'Object Literals as rows',
@@ -11,6 +13,14 @@ W.UiDeepDive = function () {
     title:'Table Sections',
     hasChild:true,
     win:'W.TableSections'
+  }));
+  
+  // Scroll Views.
+  tableData.push(Ti.UI.createTableViewRow({
+    header:'Scroll Views',
+    title:'Scroll View',
+    hasChild:true,
+    win:'W.ScrollView'
   }));  
 
   // Create a table for the nav group window.
