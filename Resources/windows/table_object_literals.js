@@ -1,5 +1,5 @@
 W.TableObjectLiteral = function () {
-  win = UI.Win({title:'Test'});
+  win = UI.Win({title:'Object Literals'});
   
   var tableData = [
     {title:'Row 1'},

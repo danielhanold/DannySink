@@ -37,7 +37,7 @@ W.UiDeepDive = function () {
   });
 
   // Create the window for the navigation group.
-  var winNavGroup = UI.Win({title:'UI Deep Dive'});
+  var winNavGroup = UI.Win({navBarHidden:true});
   
   // Add the table data to the nav group window.
   winNavGroup.add(table);
@@ -47,9 +47,7 @@ W.UiDeepDive = function () {
     window: winNavGroup
   });
   // Create the root window for this section.
-  var win = Ti.UI.createWindow({navBarHidden:true});
-  win.navGroup = navGroup;
-  win.test = 'testing this';
+  var win = Ti.UI.createWindow({title:'UI Deep Dive'});
   
   // Add the navGroup to the root window.
   win.add(navGroup);
@@ -63,7 +61,7 @@ W.UiDeepDive = function () {
     if (e.rowData.win !== undefined) {
       // I know eval is evil, but I don't know how to do this otherwise.
       var win = eval(e.rowData.win + '()');
-      navGroup.open(win);
+      Tab[1].open(win);
     }
   });
   
