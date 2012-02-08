@@ -37,14 +37,14 @@ W.UiDeepDive = function () {
   });
 
   // Create the window for the navigation group.
-  var winNavGroup = UI.Win({navBarHidden:true});
+  var winNavGroup = UI.Win({navBarHidden:true,backgroundColor:'#CCCCCC',});
   
   // Add the table data to the nav group window.
   winNavGroup.add(table);
 
   // Create a Navigation Group and set winNavGroup as the first window to show up.
   var navGroup = Ti.UI.iPhone.createNavigationGroup({
-    window: winNavGroup
+    window: winNavGroup,
   });
   // Create the root window for this section.
   var win = Ti.UI.createWindow({title:'UI Deep Dive'});
