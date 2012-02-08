@@ -26,6 +26,14 @@ W.UiDeepDive = function () {
     title:'Scrollable View',
     hasChild:true,
     win:'W.ScrollableView'
+  }));
+  
+  // Gestures.
+  tableData.push(Ti.UI.createTableViewRow({
+    header:'Gestures',
+    title:'Gestures',
+    hasChild:true,
+    win:'W.Gestures'
   }));  
 
   // Create a table for the nav group window.

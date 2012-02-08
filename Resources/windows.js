@@ -13,6 +13,7 @@ function refreshWindows(){
   Ti.include('windows/layout_modes.js');
   Ti.include('windows/event_handling.js');
   Ti.include('windows/tabgroup.js');
+  Ti.include('windows/gestures.js');
 }
 
 // Refresh all windows.
