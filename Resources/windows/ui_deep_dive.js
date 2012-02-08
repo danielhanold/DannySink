@@ -61,7 +61,15 @@ W.UiDeepDive = function () {
     if (e.rowData.win !== undefined) {
       // I know eval is evil, but I don't know how to do this otherwise.
       var win = eval(e.rowData.win + '()');
-      Tab[1].open(win);
+      
+      // Open this window in the current tab.
+      // currentTab is a tab object and gets set in an 
+      // event handler in tabgroup.js.
+      TabGroup.currentTab.open(win);
+      
+      // Alternative, to open a window in a specific
+      // tab, use the tab index of the global Tab object.
+      // Tab[1].open(win);
     }
   });
   

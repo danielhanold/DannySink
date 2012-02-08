@@ -32,6 +32,13 @@ W.TabGroup = function(){
     Ti.API.info('Adding a tab to the tab group: ' + Tab[i].title);
     group.addTab(Tab[i]);
   }
+  
+  // Add an event listeners that defines the 
+  // current tab in this tab group.
+  group.addEventListener('focus', function(e) {
+    Ti.API.log('The active tab is now: ' + e.tab.title);
+    group.currentTab = e.tab;
+  });
     
   return group;
 };
