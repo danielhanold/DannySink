@@ -34,14 +34,21 @@ W.UiDeepDive = function () {
     title:'Gestures',
     hasChild:true,
     win:'W.Gestures'
+  }));
+  
+  // Animation.
+  tableData.push(Ti.UI.createTableViewRow({
+    header:'Animations',
+    title:'Animations',
+    hasChild:true,
+    win:'W.Animations'
   }));  
 
   // Create a table for the nav group window.
   // Add table rows to table.
   var table = Titanium.UI.createTableView({
       data:tableData,
-      style:Ti.UI.iPhone.TableViewStyle.GROUPED,
-      scrollable:false
+      style:Ti.UI.iPhone.TableViewStyle.GROUPED
   });
 
   // Create the window for the navigation group.
@@ -59,6 +66,9 @@ W.UiDeepDive = function () {
   
   // Add the navGroup to the root window.
   win.add(navGroup);
+  
+  // Scroll to a specific row.
+  table.scrollToIndex(tableData.length - 3);
   
   /**
    *  Event Listeners
