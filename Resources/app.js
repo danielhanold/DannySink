@@ -1,3 +1,6 @@
+// Initialize app variables.
+Ti.include('utils/properties.js');
+
 // Load include files.
 Ti.include('utils/ui.js');
 Ti.include('utils/gesture.js');
