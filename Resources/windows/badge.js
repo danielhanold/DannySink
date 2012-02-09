@@ -4,6 +4,7 @@ W.Badge = function() {
   // Define the table rows.
   var rowIncrease = Ti.UI.createTableViewRow({title:'Increase count', header:'Tab 4 badge count'});
   var rowDecrease = Ti.UI.createTableViewRow({title:'Decrease count'});
+  // Create a row with a switch for the badge for Tab 4.
   var toggleCounter = Ti.UI.createTableViewRow({
     title:'Counter visibility',
     selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
@@ -13,7 +14,21 @@ W.Badge = function() {
     right:10
   });
   toggleCounter.add(toggleCounterSwitch);
-  var toggleCounterApp = Ti.UI.createTableViewRow({title:'Counter visiblity', header:'App Badge'});
+  
+  // Create a row that dipslays the settings from the settings app.
+  var toggleCounterApp = Ti.UI.createTableViewRow({
+    header:'Settings from Settings App',
+    title:'Counter visiblity',
+    selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+  });
+  win.toggleCounterAppSwitch = toggleCounterAppSwitch;
+  var toggleCounterAppSwitch = Ti.UI.createSwitch({
+    right:10,
+    value:Ti.App.Properties.getString('app_counter_badge_preference'),
+    enabled:false    
+  });
+  toggleCounterApp.add(toggleCounterAppSwitch);
+  
   var tableData = new Array();
   tableData.push(rowIncrease);
   tableData.push(rowDecrease);
