@@ -3,10 +3,12 @@ W.Examples = function() {
   var positioning = Titanium.UI.createTableViewRow({title:'Positioning', header:'Layout & Positioning', hasChild:true});  
   var layoutModes = Titanium.UI.createTableViewRow({title:'Layout Modes', hasChild:true});
   var eventHandling = Titanium.UI.createTableViewRow({title:'Event Handling', hasChild:true});
+  var badge = Titanium.UI.createTableViewRow({title:'Badge Things', header:'Global Things', hasChild:true});
   var tableData = new Array();
   tableData.push(positioning);
   tableData.push(layoutModes);
   tableData.push(eventHandling);
+  tableData.push(badge);
   
   // Add table rows to table.
   var table = Titanium.UI.createTableView({
@@ -48,6 +50,9 @@ W.Examples = function() {
   eventHandling.addEventListener('click', function(e){
     Tab[0].open(W.EventHandling());
   });
+  badge.addEventListener('click', function(e){
+    Tab[0].open(W.Badge());
+  });  
   
   return winRoot;
 }

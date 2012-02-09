@@ -25,7 +25,9 @@ W.TabGroup = function(){
     title:'Tab #4',
     window:UI.Win({
       title: 'Fourth Window'
-    })
+    }),
+    icon:'KS_nav_views.png',
+    badge:10 // Badge requires an icon to be set, otherwise doesn't work.
   });
 
   for (var i = 0, j = Tab.length; i < j; i++) {
@@ -36,8 +38,10 @@ W.TabGroup = function(){
   // Add an event listeners that defines the 
   // current tab in this tab group.
   group.addEventListener('focus', function(e) {
-    Ti.API.log('The active tab is now: ' + e.tab.title);
-    group.currentTab = e.tab;
+    if (e.tab !== undefined) {
+      Ti.API.log('The active tab is now: ' + e.tab.title);
+      group.currentTab = e.tab;      
+    }
   });
     
   return group;

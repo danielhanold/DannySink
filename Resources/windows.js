@@ -15,6 +15,7 @@ function refreshWindows(){
   Ti.include('windows/tabgroup.js');
   Ti.include('windows/gestures.js');
   Ti.include('windows/animations.js');
+  Ti.include('windows/badge.js');
 }
 
 // Refresh all windows.
