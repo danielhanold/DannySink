@@ -24,10 +24,7 @@ W.Examples = function() {
   });
 
   // Create a window for the navigation group.
-  var winNavGroup = UI.Win({
-    backgroundColor:'#CCCCCC',
-    title:'Examples'
-  });
+  var winNavGroup = UI.Win({navBarHidden:true});
   // Add the table with the navigation group to the window.
   winNavGroup.add(table);
   // Create a navigation group and add the window to it.
@@ -35,18 +32,21 @@ W.Examples = function() {
     window: winNavGroup
   });
   // Add the table to the window.
-  var winRoot = Ti.UI.createWindow({navBarHidden:true});
+  var winRoot = Ti.UI.createWindow({
+    backgroundColor:'#CCCCCC',
+    title:'Examples'    
+  });
   winRoot.add(navGroup);
   
   // Add event listeners.
   positioning.addEventListener('click', function(e){
-    navGroup.open(W.Positioning());
+    Tab[0].open(W.Positioning());
   });
   layoutModes.addEventListener('click', function(e){
-    navGroup.open(W.LayoutModes());
+    Tab[0].open(W.LayoutModes());
   });
   eventHandling.addEventListener('click', function(e){
-    navGroup.open(W.EventHandling());
+    Tab[0].open(W.EventHandling());
   });
   
   return winRoot;
