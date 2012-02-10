@@ -17,6 +17,7 @@ function refreshWindows(){
   Ti.include('windows/animations.js');
   Ti.include('windows/badge.js');
   Ti.include('windows/properties_api.js');
+  Ti.include('windows/database.js');
 }
 
 // Refresh all windows.

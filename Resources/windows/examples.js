@@ -4,13 +4,15 @@ W.Examples = function() {
   var layoutModes = Titanium.UI.createTableViewRow({title:'Layout Modes', hasChild:true});
   var eventHandling = Titanium.UI.createTableViewRow({title:'Event Handling', hasChild:true});
   var badge = Titanium.UI.createTableViewRow({title:'Badge Things', header:'Global Things', hasChild:true});
-  var properties = Titanium.UI.createTableViewRow({title:'Properties API', hasChild:true});
+  var properties = Titanium.UI.createTableViewRow({header:'Local Data Sources', title:'Properties API', hasChild:true});
+  var database = Titanium.UI.createTableViewRow({title:'Database', hasChild:true});
   var tableData = new Array();
   tableData.push(positioning);
   tableData.push(layoutModes);
   tableData.push(eventHandling);
   tableData.push(badge);
   tableData.push(properties);
+  tableData.push(database);
   
   // Add table rows to table.
   var table = Titanium.UI.createTableView({
@@ -57,6 +59,9 @@ W.Examples = function() {
   });
   properties.addEventListener('click', function(e){
     Tab[0].open(W.PropertiesApi());
+  });
+  database.addEventListener('click', function(e){
+    Tab[0].open(W.Database());
   });  
   
   return winRoot;
