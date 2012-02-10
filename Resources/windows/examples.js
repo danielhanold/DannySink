@@ -6,6 +6,7 @@ W.Examples = function() {
   var badge = Titanium.UI.createTableViewRow({title:'Badge Things', header:'Global Things', hasChild:true});
   var properties = Titanium.UI.createTableViewRow({header:'Local Data Sources', title:'Properties API', hasChild:true});
   var database = Titanium.UI.createTableViewRow({title:'Database', hasChild:true});
+  var weather = Titanium.UI.createTableViewRow({title:'Weather Example', hasChild:true});
   var tableData = new Array();
   tableData.push(positioning);
   tableData.push(layoutModes);
@@ -13,6 +14,7 @@ W.Examples = function() {
   tableData.push(badge);
   tableData.push(properties);
   tableData.push(database);
+  tableData.push(weather);
   
   // Add table rows to table.
   var table = Titanium.UI.createTableView({
@@ -62,6 +64,9 @@ W.Examples = function() {
   });
   database.addEventListener('click', function(e){
     Tab[0].open(W.Database());
+  });
+  weather.addEventListener('click', function(e){
+    Tab[0].open(W.Weather());
   });  
   
   return winRoot;
