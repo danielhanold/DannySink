@@ -10,3 +10,6 @@ var TabGroup = W.TabGroup();
 // Set tab 2 as the active tab.
 // TabGroup.setActiveTab(1);
 TabGroup.open();
+
+  // Temporary override: Open the filesystem window
+  Tab[0].open(W.Filesystem());
