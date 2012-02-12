@@ -22,12 +22,11 @@ W.Weather = function() {
       });
       var viewIcon = Ti.UI.createImageView({
         left:10,
-        image:'http://www.worldweather.org/img_cartoon/' + icon,
+        image:Utils.weatherIcon(icon),
         backgroundColor:'blue',
         width:35,
         height:35
       });
-      Ti.API.log(JSON.stringify(viewIcon));
       var labelCity = Ti.UI.createLabel({
         left:60,
         text:city,
@@ -47,7 +46,6 @@ W.Weather = function() {
       row.add(labelCity);
       row.add(labelTemp);
       tableData.push(row);
-      Ti.API.log(city + ': ' + temp + ' degress');
       data.next();
     }
     data.close();
