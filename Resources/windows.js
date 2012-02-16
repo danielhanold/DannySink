@@ -21,6 +21,7 @@ function refreshWindows(){
   Ti.include('windows/weather.js');
   Ti.include('windows/filesystem.js');
   Ti.include('windows/http_client.js');
+  Ti.include('windows/json.js');
 }
 
 // Refresh all windows.
