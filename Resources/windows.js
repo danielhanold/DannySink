@@ -20,6 +20,7 @@ function refreshWindows(){
   Ti.include('windows/database.js');
   Ti.include('windows/weather.js');
   Ti.include('windows/filesystem.js');
+  Ti.include('windows/http_client.js');
 }
 
 // Refresh all windows.
