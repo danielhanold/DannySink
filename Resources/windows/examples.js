@@ -11,6 +11,7 @@ W.Examples = function() {
   var httpClient = Titanium.UI.createTableViewRow({title:'HTTP Client', 'header':'Remote Data Sources', hasChild:true});
   var json = Ti.UI.createTableViewRow({title:'JSON Example', hasChild:true});
   var fileUploadExample = Ti.UI.createTableViewRow({title:'File Upload', hasChild:true});
+  var fileDownloadExample = Ti.UI.createTableViewRow({title:'File Download', hasChild:true});
   var tableData = new Array();
   tableData.push(positioning);
   tableData.push(layoutModes);
@@ -23,6 +24,7 @@ W.Examples = function() {
   tableData.push(httpClient);
   tableData.push(json);
   tableData.push(fileUploadExample);
+  tableData.push(fileDownloadExample);
   
   // Add table rows to table.
   var table = Titanium.UI.createTableView({
@@ -84,6 +86,9 @@ W.Examples = function() {
   });
   fileUploadExample.addEventListener('click', function(e) {
     Tab[0].open(W.FileUploadExample());
+  });
+  fileDownloadExample.addEventListener('click', function(e) {
+    Tab[0].open(W.FileDownloadExample());
   });  
 
   return winRoot;

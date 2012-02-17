@@ -23,6 +23,7 @@ function refreshWindows(){
   Ti.include('windows/http_client.js');
   Ti.include('windows/json.js');
   Ti.include('windows/file_upload.js');
+  Ti.include('windows/file_download.js');
 }
 
 // Refresh all windows.
