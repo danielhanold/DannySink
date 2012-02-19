@@ -11,6 +11,6 @@ Ti.include('windows.js');
 Ti.include('utils/startup.js');
 
 var TabGroup = W.TabGroup();
-// Set tab 2 as the active tab.
-// TabGroup.setActiveTab(1);
+// Set tab 3 as the active tab.
+TabGroup.setActiveTab(2);
 TabGroup.open();
