@@ -15,10 +15,8 @@ W.TabGroup = function(){
   });
   
   Tab[2] = Ti.UI.createTab({
-    title:'Tab #3',
-    window:UI.Win({
-      title:'Third Window'
-    })
+    title:'Media',
+    window:W.Media()
   });
   
   Tab[3] = Ti.UI.createTab({
