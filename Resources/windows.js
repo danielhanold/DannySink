@@ -27,6 +27,7 @@ function refreshWindows(){
   Ti.include('windows/media.js');
   Ti.include('windows/sound_button.js');
   Ti.include('windows/video.js');
+  Ti.include('windows/image_background.js');
 }
 
 // Refresh all windows.

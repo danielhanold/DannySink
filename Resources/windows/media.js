@@ -7,8 +7,10 @@ W.Media = function() {
   var tableData = new Array();
   var rowSoundButton = Ti.UI.createTableViewRow({title:'Sound Button', header:'Sound API', hasChild:true});
   var rowVideoButton = Ti.UI.createTableViewRow({title:'Video Example', header:'Video API', hasChild:true});  
+  var rowImageBackgroundButton = Ti.UI.createTableViewRow({title:'Background Image', header:'Images', hasChild:true});
   tableData.push(rowSoundButton);
   tableData.push(rowVideoButton);
+  tableData.push(rowImageBackgroundButton);
   
   var table = Ti.UI.createTableView({
     data:tableData
@@ -25,6 +27,9 @@ W.Media = function() {
   rowVideoButton.addEventListener('click', function(e) {
     TabGroup.currentTab.open(W.Video());
   });  
+  rowImageBackgroundButton.addEventListener('click', function(e) {
+    TabGroup.currentTab.open(W.ImageBackground());
+  });    
   
   
   return win;
