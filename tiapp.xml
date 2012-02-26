@@ -7,7 +7,7 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>1.8.1</sdk-version>
+    <sdk-version>2.0.0.v20120225104635</sdk-version>
     <id>com.danielhanold.dannysink</id>
     <name>DannySink</name>
     <version>1.0</version>
