@@ -11,6 +11,9 @@ Ti.include('windows.js');
 Ti.include('utils/startup.js');
 
 var TabGroup = W.TabGroup();
-// Set tab 3 as the active tab.
-TabGroup.setActiveTab(2);
+// Set tab 4 as the active tab.
+TabGroup.setActiveTab(3);
 TabGroup.open();
+
+// Define the purpose of location services for iOS.
+Ti.Geolocation.purpose = 'Driving Directions';
