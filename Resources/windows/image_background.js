@@ -1,7 +1,14 @@
 W.ImageBackground = function() {
   var win = UI.Win({
     title:'Background Images',
-    layout:'vertical'
+  });
+  
+  var scrollView = Ti.UI.createScrollView({
+    layout:'vertical',
+    contentWidth:'100%',
+    contentHeight:'auto',
+    showVerticalScrollIndicator:true,
+    showHorizontalScrollIndicator:false,
   });
   
   var label = Ti.UI.createLabel({
@@ -35,10 +42,11 @@ W.ImageBackground = function() {
     backgroundRepeat:true
   });
   
-  win.add(label);
-  win.add(button);
-  win.add(view);
-  win.add(viewRepeat);
+  scrollView.add(label);
+  scrollView.add(button);
+  scrollView.add(view);
+  scrollView.add(viewRepeat);
+  win.add(scrollView);
   
   return win;
 }
