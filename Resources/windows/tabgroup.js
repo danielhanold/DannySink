@@ -20,10 +20,8 @@ W.TabGroup = function(){
   });
   
   Tab[3] = Ti.UI.createTab({
-    title:'Tab #4',
-    window:UI.Win({
-      title: 'Fourth Window'
-    }),
+    title:'Location',
+    window:W.LocationServices(),
     icon:'KS_nav_views.png',
     badge:10 // Badge requires an icon to be set, otherwise doesn't work.
   });

@@ -30,6 +30,8 @@ function refreshWindows(){
   Ti.include('windows/image_background.js');
   Ti.include('windows/image_view.js');
   Ti.include('windows/camera_gallery.js');
+  Ti.include('windows/location_services.js');
+  Ti.include('windows/location_position.js');
 }
 
 // Refresh all windows.
