@@ -7,10 +7,12 @@ W.Media = function() {
   var tableData = new Array();
   var rowSoundButton = Ti.UI.createTableViewRow({title:'Sound Button', header:'Sound API', hasChild:true});
   var rowVideoButton = Ti.UI.createTableViewRow({title:'Video Example', header:'Video API', hasChild:true});  
-  var rowImageBackgroundButton = Ti.UI.createTableViewRow({title:'Background Image', header:'Images', hasChild:true});
+  var rowImageBackgroundImage = Ti.UI.createTableViewRow({title:'Background Image', header:'Images', hasChild:true});
+  var rowImageView = Ti.UI.createTableViewRow({title:'Image View', hasChild:true});
   tableData.push(rowSoundButton);
   tableData.push(rowVideoButton);
-  tableData.push(rowImageBackgroundButton);
+  tableData.push(rowImageBackgroundImage);
+  tableData.push(rowImageView);
   
   var table = Ti.UI.createTableView({
     data:tableData
@@ -27,10 +29,12 @@ W.Media = function() {
   rowVideoButton.addEventListener('click', function(e) {
     TabGroup.currentTab.open(W.Video());
   });  
-  rowImageBackgroundButton.addEventListener('click', function(e) {
+  rowImageBackgroundImage.addEventListener('click', function(e) {
     TabGroup.currentTab.open(W.ImageBackground());
-  });    
-  
+  }); 
+  rowImageView.addEventListener('click', function(e) {
+    TabGroup.currentTab.open(W.ImageView());
+  });  
   
   return win;
 }
