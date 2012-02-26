@@ -29,6 +29,7 @@ function refreshWindows(){
   Ti.include('windows/video.js');
   Ti.include('windows/image_background.js');
   Ti.include('windows/image_view.js');
+  Ti.include('windows/camera_gallery.js');
 }
 
 // Refresh all windows.
