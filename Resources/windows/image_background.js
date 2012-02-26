@@ -34,6 +34,15 @@ W.ImageBackground = function() {
     backgroundImage:Ti.Filesystem.resourcesDirectory + 'images/sky.jpg'
   });
   
+  var colorBlock = Ti.UI.createView({
+    top:10,
+    left:10,
+    backgroundColor:'red',
+    width:20,
+    height:20
+  });
+  view.add(colorBlock);
+  
   var viewRepeat = Ti.UI.createView({
     top:20,
     width:150,
