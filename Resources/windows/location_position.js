@@ -58,7 +58,6 @@ W.LocationPosition = function() {
   win.add(accuracy);
   win.add(headlineAddress);
   win.add(address);
-  win.add(detecting);
   
   /**
    * When this window gets opened for the first
@@ -83,6 +82,25 @@ W.LocationPosition = function() {
   }
   
   /**
+   * Update the location when it changes.
+   */
+  if (Ti.Geolocation.locationServicesEnabled) {
+    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
+    Ti.Geolocation.distanceFilter = 10;
+    
+    Ti.Geolocation.addEventListener('location', function(e) {
+      if (e.error) {
+        Ti.API.error('Error detected: ' + e.error);
+      }
+      else {
+        // Fire an application-wide event so that
+        // other elements can react to this.
+        Ti.App.fireEvent('location_update', e.coords);
+      }
+    })    
+  }
+  
+  /**
    * Add a global event listener to the location_update function.
    */
   Ti.App.addEventListener('location_update', function(coords) {
@@ -97,7 +115,7 @@ W.LocationPosition = function() {
     
     // If the accuracy is better than ACCURACY_HUNDRED_METERS,
     // attempt to reverse-geocode the coordinates.
-    if (coords.accuracy <= ACCURACY_HUNDRED_METERS) {
+    if (coords.accuracy <= Ti.Geolocation.ACCURACY_HUNDRED_METERS) {
       Ti.Geolocation.reverseGeocoder(coords.latitude, coords.longitude, function(e) {
         Ti.API.info('Attempting to reverse-geocode location');
         if (e.success) {
