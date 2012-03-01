@@ -40,10 +40,47 @@ W.LocationHeading = function() {
     height:'auto'    
   });
   
+  var labelMagneticHeading = Ti.UI.createLabel({
+    text:'Magnetic Heading: Not detected yet',
+    top:10,
+    left:10,    
+    font:{fontSize:12},
+    width:'auto',
+    height:'auto'    
+  });
+  
+  var labelTrueHeading = Ti.UI.createLabel({
+    text:'True Heading: Not detected yet',
+    top:10,
+    left:10,    
+    font:{fontSize:12},
+    width:'auto',
+    height:'auto'    
+  });    
+  
   win.add(labelAccuracy);
   win.add(labelXCoord);
   win.add(labelYCoord);
   win.add(labelZCoord);
+  win.add(labelMagneticHeading);
+  win.add(labelTrueHeading);
+
+  /**
+   * Update the labels when the heading gets updated.
+   */
+  var headingEventUpdate = function(e) {
+    if (e.error) {
+      alert('Error: ' + e.error);
+    } else {
+      Ti.API.info('Update heading');
+      labelAccuracy.text = 'Accuracy: ' + e.heading.accuracy;
+      labelXCoord.text = 'XCoord: ' + e.heading.x;
+      labelYCoord.text = 'YCoord: ' + e.heading.y;
+      labelZCoord.text = 'ZCoord: ' + e.heading.z;
+      labelMagneticHeading.text = 'Magnetic Heading: ' + e.heading.magneticHeading;
+      labelTrueHeading.text = 'True Heading: ' + e.heading.trueHeading;
+    }
+  }
   
   if (Ti.Geolocation.locationServicesEnabled) {
     Ti.Geolocation.purpose = 'Get Current Heading';
@@ -67,21 +104,20 @@ W.LocationHeading = function() {
         }
       });
       
-      Ti.Geolocation.addEventListener('heading', function(e) {
-        if (e.error) {
-          alert('Error: ' + e.error);
-        } else {
-          labelAccuracy.text = 'Accuracy: ' + e.heading.accuracy;
-          labelXCoord.text = 'XCoord: ' + e.heading.x;
-          labelYCoord.text = 'YCoord: ' + e.heading.y;
-          labelZCoord.text = 'ZCoord: ' + e.heading.z;
-        }
-      });
+      Ti.Geolocation.addEventListener('heading', headingEventUpdate);
     }
   }
   else {
     alert('Please enable location services.');
   }
   
+  /**
+   * When this window gets closed, remove
+   * the event listener from Geolocation.
+   */
+  win.addEventListener('close', function(e) {
+    Ti.Geolocation.removeEventListener('heading', headingEventUpdate);
+    Ti.API.info('Heading Window was closed. Remove the event listener from heading update.');
+  })
   return win;
 }
