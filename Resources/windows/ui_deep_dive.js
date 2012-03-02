@@ -42,6 +42,21 @@ W.UiDeepDive = function () {
     title:'Animations',
     hasChild:true,
     win:'W.Animations'
+  }));
+  
+  // Basic Web Views.
+  tableData.push(Ti.UI.createTableViewRow({
+    header:'Web Views',
+    title:'Basic Web View',
+    hasChild:true,
+    win:'W.WebviewBasic'
+  }));
+  
+  // Advanced Web Views.
+  tableData.push(Ti.UI.createTableViewRow({
+    title:'Advanced Web View',
+    hasChild:true,
+    win:'W.WebviewAdvanced'
   }));  
 
   // Create a table for the nav group window.
@@ -68,7 +83,7 @@ W.UiDeepDive = function () {
   win.add(navGroup);
   
   // Scroll to a specific row.
-  table.scrollToIndex(tableData.length - 3);
+  table.scrollToIndex(tableData.length - 4);
   
   /**
    *  Event Listeners

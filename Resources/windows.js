@@ -35,6 +35,8 @@ function refreshWindows(){
   Ti.include('windows/location_heading.js');
   Ti.include('windows/location_map_basic.js');
   Ti.include('windows/location_map_forward_geo.js');
+  Ti.include('windows/webview_basic.js');
+  Ti.include('windows/webview_advanced.js');
 }
 
 // Refresh all windows.
