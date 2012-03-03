@@ -12,7 +12,7 @@ Ti.include('utils/startup.js');
 
 var TabGroup = W.TabGroup();
 // Set tab 4 as the active tab.
-TabGroup.setActiveTab(1);
+TabGroup.setActiveTab(0);
 TabGroup.open();
 
 // Define the purpose of location services for iOS.

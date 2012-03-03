@@ -4,6 +4,7 @@ W.Examples = function() {
   var layoutModes = Titanium.UI.createTableViewRow({title:'Layout Modes', hasChild:true});
   var eventHandling = Titanium.UI.createTableViewRow({title:'Event Handling', hasChild:true});
   var badge = Titanium.UI.createTableViewRow({title:'Badge Things', header:'Global Things', hasChild:true});
+  var backgroundServices = Titanium.UI.createTableViewRow({title:'Background Services', hasChild:true});
   var properties = Titanium.UI.createTableViewRow({header:'Local Data Sources', title:'Properties API', hasChild:true});
   var database = Titanium.UI.createTableViewRow({title:'Database', hasChild:true});
   var filesystem = Titanium.UI.createTableViewRow({title:'Filesystem', hasChild:true});
@@ -17,6 +18,7 @@ W.Examples = function() {
   tableData.push(layoutModes);
   tableData.push(eventHandling);
   tableData.push(badge);
+  tableData.push(backgroundServices);
   tableData.push(properties);
   tableData.push(database);
   tableData.push(filesystem);
@@ -69,6 +71,9 @@ W.Examples = function() {
   badge.addEventListener('click', function(e){
     Tab[0].open(W.Badge());
   });
+  backgroundServices.addEventListener('click', function(e){
+    Tab[0].open(W.BackgroundServices());
+  });  
   properties.addEventListener('click', function(e){
     Tab[0].open(W.PropertiesApi());
   });
