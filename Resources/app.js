@@ -17,3 +17,7 @@ TabGroup.open();
 
 // Define the purpose of location services for iOS.
 Ti.Geolocation.purpose = 'Driving Directions';
+
+// Get the publisher name and description.
+Ti.API.info('The name of this app\'s publisher is: ' + Ti.App.getPublisher());
+Ti.API.info('This app\'s description is: ' + Ti.App.getDescription());

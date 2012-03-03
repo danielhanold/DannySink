@@ -13,7 +13,7 @@
     <version>1.0</version>
     <publisher>danny</publisher>
     <url>http://www.danielhanold.com</url>
-    <description>not specified</description>
+    <description>Danny's version of the KitchenSink module.</description>
     <copyright>2012 by danny</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
